@@ -3,7 +3,6 @@ package io.tornimo;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.graphite.Graphite;
 import com.codahale.metrics.graphite.GraphiteReporter;
-import com.codahale.metrics.graphite.GraphiteSender;
 import io.micrometer.core.instrument.Clock;
 import io.micrometer.core.instrument.dropwizard.DropwizardClock;
 import io.micrometer.core.instrument.dropwizard.DropwizardMeterRegistry;
@@ -13,34 +12,29 @@ import io.micrometer.core.lang.Nullable;
 import java.net.InetSocketAddress;
 import java.util.concurrent.TimeUnit;
 
-public class TornimoMeterRegisty extends DropwizardMeterRegistry {
+public class TornimoMeterRegistry extends DropwizardMeterRegistry {
 
     private final TornimoConfig config;
     private final GraphiteReporter reporter;
 
-    public TornimoMeterRegisty(TornimoConfig config,
-                               Clock clock) {
-        this(config, clock, new TornimoHierarchicalNameMapper(config.tagsAsPrefix()));
-    }
-
-    public TornimoMeterRegisty(TornimoConfig config,
-                               Clock clock,
-                               HierarchicalNameMapper nameMapper) {
+    public TornimoMeterRegistry(TornimoConfig config,
+                                Clock clock,
+                                HierarchicalNameMapper nameMapper) {
         this(config, clock, nameMapper, new MetricRegistry());
     }
 
-    public TornimoMeterRegisty(TornimoConfig config,
-                               Clock clock,
-                               HierarchicalNameMapper nameMapper,
-                               MetricRegistry metricRegistry) {
+    public TornimoMeterRegistry(TornimoConfig config,
+                                Clock clock,
+                                HierarchicalNameMapper nameMapper,
+                                MetricRegistry metricRegistry) {
         this(config, clock, nameMapper, metricRegistry, defaultGraphiteReporter(config, clock, metricRegistry));
     }
 
-    public TornimoMeterRegisty(TornimoConfig config,
-                               Clock clock,
-                               HierarchicalNameMapper nameMapper,
-                               MetricRegistry metricRegistry,
-                               GraphiteReporter reporter) {
+    public TornimoMeterRegistry(TornimoConfig config,
+                                Clock clock,
+                                HierarchicalNameMapper nameMapper,
+                                MetricRegistry metricRegistry,
+                                GraphiteReporter reporter) {
         super(config, metricRegistry, nameMapper, clock);
 
         this.config = config;
@@ -55,11 +49,7 @@ public class TornimoMeterRegisty extends DropwizardMeterRegistry {
                 .withClock(new DropwizardClock(clock))
                 .convertRatesTo(config.rateUnits())
                 .convertDurationsTo(config.durationUnits())
-                .build(getGraphiteSender(config));
-    }
-
-    private static GraphiteSender getGraphiteSender(TornimoConfig config) {
-        return new Graphite(new InetSocketAddress(config.host(), config.port()));
+                .build(new Graphite(new InetSocketAddress(config.host(), config.port())));
     }
 
     public void stop() {
