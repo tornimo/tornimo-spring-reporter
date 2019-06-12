@@ -93,6 +93,6 @@ workflows:
       - deploy:
           filters:
             tags:
-              only: /[0-9]+(\.[0-9]+){2}/
+              only: /^v[0-9]+(\.[0-9]+){2}/
             branches:
               ignore: /.*/
