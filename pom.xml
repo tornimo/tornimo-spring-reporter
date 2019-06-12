@@ -6,7 +6,7 @@
 
     <groupId>io.tornimo</groupId>
     <artifactId>tornimo-spring-reporter</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Spring metric reporter for Tornimo.io</description>
