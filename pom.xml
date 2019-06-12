@@ -128,10 +128,10 @@
         </developer>
     </developers>
 
-<!--    <ciManagement>-->
-<!--        <system>Circle CI</system>-->
-<!--        <url>not yet</url>-->
-<!--    </ciManagement>-->
+    <ciManagement>
+        <system>Circle CI</system>
+        <url>https://circleci.com/gh/tornimo/tornimo-spring-reporter</url>
+    </ciManagement>
 
     <scm>
         <connection>scm:git:git://github.com/tornimo/tornimo-spring-reporter.git</connection>
