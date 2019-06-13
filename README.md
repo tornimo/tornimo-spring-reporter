@@ -1,7 +1,7 @@
 # tornimo-spring-reporter
 Spring-Boot 2 metric reporter for Tornimo.io based on [micrometer.io](micrometer.io). 
 
-## Start Using
+## Start Using Tornimo.io
 1) If you haven't done so, signup for a free account at [tornimo.io](https://tornimo.io/start-free-trial/)
 2) After a few minutes, you will receive a link to your dashboard and a token. Use the token in the configuration step
 3) Add tornimo-spring-reporter to your dependencies
