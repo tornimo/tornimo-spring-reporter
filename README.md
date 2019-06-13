@@ -3,16 +3,18 @@ Spring-Boot 2 metric reporter for Tornimo.io based on [micrometer.io](micrometer
 
 ## Start Using Tornimo.io
 1) If you haven't done so, signup for a free account at [tornimo.io](https://tornimo.io/start-free-trial/)
-2) After a few minutes, you will receive a link to your dashboard and a token. Use the token in the configuration step
+2) After a few minutes, you will receive a link to your dashboard, url for data ingestion and a token. Use the token in the configuration step
 3) Add tornimo-spring-reporter to your dependencies
 
 ## Configuration
 ``` 
 management.metrics.export.tornimo.token=b55670fd-ea50-40e4-9cf3-82d2ed46c629  # 1
-management.metrics.export.tornimo.app=example-app                             # 2
+management.metrics.export.tornimo.host=put.b55670fd.tornimo.io                # 2
+management.metrics.export.tornimo.app=example-app                             # 3
 ``` 
 1) token provided during registration at [tornimo.io](tornimo.io)
-2) application name that will be added to the metric path
+2) url for metrics ingestion, provided during registration
+3) application name that will be added to the metric path
 
 ## Maven Dependency
 
