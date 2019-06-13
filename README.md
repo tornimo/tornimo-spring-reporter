@@ -1,3 +1,5 @@
+[![Build Status](https://circleci.com/gh/tornimo/tornimo-spring-reporter.svg?style=shield)](https://circleci.com/gh/tornimo/tornimo-spring-reporter)
+
 # tornimo-spring-reporter
 Spring-Boot 2 metric reporter for Tornimo.io based on [micrometer.io](micrometer.io). 
 
