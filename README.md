@@ -12,9 +12,9 @@ management.metrics.export.tornimo.token=b55670fd-ea50-40e4-9cf3-82d2ed46c629  # 
 management.metrics.export.tornimo.host=put.b55670fd.tornimo.io                # 2
 management.metrics.export.tornimo.app=example-app                             # 3
 ``` 
-1) token provided during registration at [tornimo.io](tornimo.io)
+1) Token provided during registration at [tornimo.io](tornimo.io)
 2) URL for metrics ingestion, provided during registration
-3) application name that will be added to the metric path
+3) Application name that will be added to the metric path
 
 ## Maven Dependency
 
