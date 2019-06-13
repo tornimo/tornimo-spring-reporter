@@ -144,5 +144,10 @@
         <url>https://github.com/tornimo/tornimo-spring-reporter/issues</url>
     </issueManagement>
 
-
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
 </project>
