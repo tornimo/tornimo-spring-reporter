@@ -1,4 +1,4 @@
-package io.tornimo.spring.autoconfigure;
+package io.tornimo;
 
 public interface TornimoEnvironmentData {
 

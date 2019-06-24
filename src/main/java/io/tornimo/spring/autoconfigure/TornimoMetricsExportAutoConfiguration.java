@@ -3,6 +3,7 @@ package io.tornimo.spring.autoconfigure;
 import io.micrometer.core.instrument.Clock;
 import io.micrometer.core.instrument.util.HierarchicalNameMapper;
 import io.tornimo.TornimoConfig;
+import io.tornimo.TornimoEnvironmentData;
 import io.tornimo.TornimoMeterRegistry;
 import org.springframework.boot.actuate.autoconfigure.metrics.CompositeMeterRegistryAutoConfiguration;
 import org.springframework.boot.actuate.autoconfigure.metrics.MetricsAutoConfiguration;
