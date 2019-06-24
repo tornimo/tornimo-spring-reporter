@@ -58,7 +58,7 @@ public class TornimoMetricsExportAutoConfiguration {
                 .toString();
     }
 
-    private StringBuilder append(TornimoConfig config, String instanceId) {
+    private StringBuilder append(TornimoConfig config, String environmentData) {
         StringBuilder builder = new StringBuilder();
 
         builder.append(config.token()).append('.');
@@ -68,8 +68,8 @@ public class TornimoMetricsExportAutoConfiguration {
             builder.append(app).append('.');
         }
 
-        if (!instanceId.isEmpty()) {
-            builder.append(instanceId).append('.');
+        if (!environmentData.isEmpty()) {
+            builder.append(environmentData).append('.');
         }
 
         return builder;
@@ -77,10 +77,10 @@ public class TornimoMetricsExportAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    @ConditionalOnBean(InstanceIdProvider.class)
-    public HierarchicalNameMapper hierarchicalNameMapper(InstanceIdProvider instanceIdProvider,
+    @ConditionalOnBean(TornimoEnvironmentData.class)
+    public HierarchicalNameMapper hierarchicalNameMapper(TornimoEnvironmentData tornimoEnvironmentData,
                                                          TornimoConfig config) {
-        return (id, convention) -> append(config, instanceIdProvider.getInstanceId())
+        return (id, convention) -> append(config, tornimoEnvironmentData.getEnvironmentString())
                 .append(HierarchicalNameMapper.DEFAULT.toHierarchicalName(id, convention))
                 .toString();
     }
