@@ -4,7 +4,7 @@
 Spring-Boot 2 metric reporter for Tornimo.io based on [micrometer.io](micrometer.io). 
 
 ## Start Using Tornimo.io
-1) If you haven't done so, signup for a free account at [tornimo.io](https://tornimo.io/start-free-trial/)
+1) If you haven't done so, signup for a free trial account at [tornimo.io](https://tornimo.io/start-free-trial/).
 2) After a few minutes, you will receive a link to your dashboard, url for data ingestion and a token. Use the token and the URL in the configuration step.
 3) Add tornimo-spring-reporter to your dependencies.
 
@@ -24,11 +24,11 @@ management.metrics.export.tornimo.app=example-app                             # 
 <dependency>
     <groupId>io.tornimo</groupId>
     <artifactId>tornimo-spring-reporter</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.1</version>
 </dependency>
 ```
 
 ## Gradle Dependency
 ```
-compile group: 'io.tornimo', name: 'tornimo-spring-reporter', version: '0.1.0'
+compile group: 'io.tornimo', name: 'tornimo-spring-reporter', version: '0.2.1'
 ```
